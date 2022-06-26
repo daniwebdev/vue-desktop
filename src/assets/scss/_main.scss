@@ -1,0 +1,89 @@
+body {
+    @apply dark:bg-black dark:text-gray-300 text-gray-700;
+}
+main {
+    position: relative;
+    margin-left: $side-nav-width;
+    margin-top: $top-nav-height;
+    // margin-bottom: $bottom-nav-height;
+    height: $main-height;
+    width: $main-width;
+    overflow: auto;
+    @apply scrollbar;
+    /* width */
+    // &::-webkit-scrollbar {
+    //     width: 10px;
+    // }
+    // /* Track */
+    // &::-webkit-scrollbar-track {
+    //     background: #f1f1f1;
+    // }
+    // /* Handle */
+    // &::-webkit-scrollbar-thumb {
+    //     background: #888;
+    // }
+    // /* Handle on hover */
+    // &::-webkit-scrollbar-thumb:hover {
+    //     background: #555;
+    // }
+}
+
+
+/* block main page only */
+.page-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    margin-left: $side-nav-width;
+    margin-top: $top-nav-height;
+    height: calc(100vh - $top-nav-height);
+    width: calc(100% - $side-nav-width);
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+
+    .hidden {
+    opacity: 0;
+    display: none;
+    }
+}
+
+/* full page block */
+.full-page-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1100;
+    height: 100vh;
+    width: 100vw;
+    transition: all 0.2s ease-in-out; 
+}
+
+
+.right-menus {
+
+    position: fixed;
+    right: 0;
+    top: $top-nav-height;
+
+    bottom: 0;
+    height: $main-height;
+    width: 400px;
+    background: #fff;
+    z-index: 100;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all .3s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    transform: translateX(400px);
+
+    &.active {
+        transform: translateX(0px);
+    }
+     
+    @apply border-l dark:border-gray-800 shadow-xl;
+  }

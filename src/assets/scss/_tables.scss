@@ -1,0 +1,29 @@
+    table {
+        width: calc(100vw - $side-nav-width);
+        thead {
+            @apply bg-gray-200;
+            tr th {
+                text-align: start;
+                @apply p-1.5;
+            }
+        }
+        tbody {
+            tr {
+                &:hover {
+                    cursor: pointer;
+                    td {
+                        @apply bg-gray-200;
+                    }
+                }
+                td {
+                    @apply border p-2;
+                    &:first-child {
+                        @apply border-l-0;
+                    }
+                    &:last-child {
+                        @apply border-r-0;
+                    }
+                }
+            }
+        }
+    }

@@ -1,0 +1,39 @@
+/* <colors> */
+
+$primary-color: #3978ff;
+$secondary-color: #444444;
+$success-color: #4caf50;
+$info-color: #2196f3;
+$warning-color: #ff9800;
+$danger-color: #f44336;
+
+/* </colors> */
+
+$colors: (
+  primary: $primary-color,
+  secondary: $secondary-color,
+  success: $success-color,
+  info: $info-color,
+  warning: $warning-color,
+  danger: $danger-color,
+);
+
+
+@each $color, $value in $colors {
+  .bg-#{$color} {
+    background-color: $value !important;
+    @if expression($color== "primary") {
+      color: #fff !important;
+    }
+  }
+  .btn.btn-#{$color} {
+    background-color: $value !important;
+    &:hover {
+      background-color: darken($value, 10%) !important;
+    }
+
+    &:hover:disabled {
+      background-color: $value !important;
+    }
+  }
+}

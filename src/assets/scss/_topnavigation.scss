@@ -1,0 +1,172 @@
+.top-navigation {
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  height: $top-nav-height;
+  top: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 1030;
+  @apply dark:bg-black  dark:border-gray-800 bg-white border-b border-gray-200;
+
+  .top-nav-center {
+    -webkit-app-region: drag;
+    user-select: none;
+  }
+  .app-nav {
+    max-width: 300px;
+
+    button {
+      @apply button-main-navigation;
+
+      padding: 0 10px;
+      height: $top-nav-height;
+      
+    }
+  }
+  .brands {
+    @apply bg-gray-100 dark:bg-gray-800;
+    width: $side-nav-width;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .top-nav-divider {
+    width: 1px;
+    height: calc($top-nav-height * 0.6);
+    background: #9b9b9b;
+    margin: 0 10px;
+  }
+  .window-nav {
+    display: inline-flex;
+
+    .window-nav-item {
+      height: $top-nav-height;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      padding: 0px 10px;
+      @apply button-main-navigation;
+      
+
+      &.close-app {
+        @apply hover:bg-red-600;
+      }
+
+    }
+  }
+  .top-nav-menus {
+    ul.menu-container {
+      list-style: none;
+      display: inline-flex;
+      li {
+        @apply button-main-navigation;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+        height: $top-nav-height;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        &:hover {
+          background: #e5e5e5;
+        }
+        .badge-notification {
+          position: absolute;
+          background: red;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 9px;
+          color: white;
+          width: 8px;
+          height: 8px;
+          opacity: 1;
+          right: 10px;
+          top: 5px;
+          animation: blink-animation 0.1s steps(2, start) infinite;
+          -webkit-animation: blink-animation 1s steps(5, start) infinite;
+        }
+      }
+    }
+
+    /* search input in top navigation */
+    .search-container {
+      margin-right: 10px;
+      position: relative;
+
+      .search-panel {
+        
+        @apply border border-gray-200 rounded-md p-1 mr-3 dark:border-gray-800;
+        
+        font-size: 12px;
+        width: 100%;
+        span {
+          padding: 0px 5px;
+        }
+
+        input {
+          @apply dark:bg-black;
+          width: 150px;
+          height: calc($top-nav-height - 20px);
+          color: #6b6b6b;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .search-suggestion {
+        @apply border border-gray-200 rounded-md mr-3;
+        @apply dark:bg-black dark:border-gray-800;
+
+        overflow-y: scroll;
+        margin-top: 5px;
+        position: absolute;
+        background: #fff;
+        height: 200px;
+        width: 100%;
+        display: none;
+
+        .search-suggestion-item {
+          @apply p-1 text-sm border-b;
+          @apply dark:border-gray-700 dark:hover:bg-gray-800;
+
+          &:last-child {
+            @apply border-b-0; 
+          }
+        }
+
+
+        &::-webkit-scrollbar {
+          width: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+          @apply bg-gray-800;
+        }
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

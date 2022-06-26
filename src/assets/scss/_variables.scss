@@ -1,0 +1,35 @@
+/*
+*   Layout Sizing    *   
+*/
+$top-nav-height: 40px;
+$side-nav-width: 60px;
+$bottom-nav-height: 25px;
+$main-width: calc(100% - $side-nav-width);
+$main-height: calc(100vh - $top-nav-height - $bottom-nav-height);
+$scrollbar-width: 8px;
+/*
+*   Layout Sizing    *   
+*/
+
+/* <Font Size> */
+
+$font-size-base: 16px;
+$font-size-large: $font-size-base + 2px;
+$font-size-small: $font-size-base - 2px;
+
+/* </Font Size> */
+
+:root {
+  --top-nav-height: $top-nav-height;
+  --left-nav-width: $side-nav-width;
+}
+
+/* 
+  globa setup for button in main navigation (side-nav, top-nav, bottom-nav)
+*/
+.button-main-navigation {
+  @apply outline-none;
+  &:hover {
+    @apply dark:bg-gray-800 bg-gray-200;
+  }
+}

@@ -1,0 +1,11 @@
+.btn {
+    @apply px-3 py-2 rounded-md text-white;
+    &.btn-sm {
+        @apply px-2 py-1 text-sm;
+    }
+
+    &:disabled {
+        @apply opacity-50;
+        cursor: not-allowed;
+    }
+}

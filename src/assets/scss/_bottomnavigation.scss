@@ -1,0 +1,30 @@
+.bottom-navigation {
+  @apply bg-white border-t border-gray-200;
+  @apply flex flex-row items-center justify-between;
+  @apply px-2;
+  @apply dark:bg-black dark:border-gray-800;
+  height: $bottom-nav-height;
+  width: calc(100vw - $side-nav-width);
+  left: $side-nav-width;
+  position: fixed;
+  font-size: 11px;
+  z-index: 1000;
+
+  .clock {
+    span {
+      @apply ml-1;
+    }
+  }
+
+  .side-right {
+    div {
+      margin-left: 10px;
+    }
+  }
+  .network-up {
+    @apply text-green-700 font-bold;
+  }
+  .network-down {
+    @apply text-red-600;
+  }
+}

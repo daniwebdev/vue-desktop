@@ -1,0 +1,77 @@
+@import "@/assets/scss/variables";
+
+$top-control-height: 30px;
+$table-header-height: 40px;
+.main-control {
+    height: $top-control-height;
+    display: flex;
+    align-items: center;
+    width: calc(100vw - $side-nav-width);
+    button {
+        @apply bg-blue-600 px-3 text-white text-sm;
+        height: $top-control-height;
+        &:hover {
+            @apply bg-blue-700;
+        }
+    }
+}
+
+.table-header {
+    @apply bg-gray-200;
+    @apply dark:bg-gray-700 dark:text-gray-400;
+
+    padding-right: 15px;
+    position: fixed;
+    height: $table-header-height;
+    width: calc(100vw - $side-nav-width);
+    display: flex;
+    align-items: center;
+    .header-data {
+        height: $table-header-height;
+        display: flex;
+        align-items: center;
+
+        // @apply border-b;
+        @apply dark:border-gray-200;
+
+        &:first-child {
+            border-left: none;
+        }
+    }
+}
+
+.table-body {
+    position: fixed;
+    bottom: $bottom-nav-height;
+    width: calc(100vw - $side-nav-width);
+    overflow-y: scroll;
+    height: calc( $main-height - $table-header-height - $top-control-height);
+    .table-row {
+        display: flex;
+        cursor: pointer;
+        @apply border-b border-gray-200;
+        @apply dark:text-gray-300 dark:border-gray-800;
+
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            @apply bg-gray-100;
+            @apply dark:bg-gray-800;
+        }
+        .table-data {
+            @apply border-l border-gray-200;
+            @apply dark:text-gray-500 dark:border-gray-800;
+            // border-left: 1px solid #ddd;
+            // display: flex;
+            // align-items: center;
+            padding: 8px 8px;
+            &:first-child {
+                border-left: none;
+            }
+            // padding: 10px 0px;
+        }
+    }
+}
