@@ -1,23 +1,22 @@
-import { createApp } from 'vue'
-import App from './renderer/App.vue'
+import { createApp } from "vue";
+import App from "./renderer/App.vue";
 
-import './assets/tailwind.css'
+import "./assets/tailwind.css";
 
-import './assets/scss/index.scss'
+import "./assets/scss/index.scss";
 
-import appstore from './renderer/store';
-import router from './renderer/router'
+import appstore from "./renderer/store";
+import router from "./renderer/router";
 
 // console.log(somevar);
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(appstore)
-app.use(router)
+app.use(appstore);
+app.use(router);
 
-app.mount('#app')
+app.mount("#app");
 
-
-if(window.Neutralino != undefined) {
-    window.Neutralino.init();
+if (window.Neutralino != undefined) {
+  window.Neutralino.init();
 }

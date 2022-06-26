@@ -2,7 +2,10 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./public/**/*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+  ],
   presets: [],
   // mode: 'jit', // Tailwind Hanya dicomplie 1 kali saja
   darkMode: 'class', // false or 'media' or 'class'
@@ -179,9 +182,6 @@ module.exports = {
       200: '2',
     },
     container: {},
-    content: {
-      none: 'none',
-    },
     cursor: {
       auto: 'auto',
       default: 'default',

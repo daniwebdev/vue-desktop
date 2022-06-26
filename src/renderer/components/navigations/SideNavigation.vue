@@ -136,6 +136,20 @@ export default {
                 name: "ui.card"
               },
             },
+            {
+              name: "Shimmer",
+              icon: "fas fa-sync",
+              route: {
+                name: "ui.shimmer"
+              },
+            },
+            {
+              name: "Data Grid",
+              icon: "fas fa-table",
+              route: {
+                name: "ui.data-grid"
+              },
+            },
           ],
         },
       ],

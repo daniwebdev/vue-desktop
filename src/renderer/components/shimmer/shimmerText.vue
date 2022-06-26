@@ -1,11 +1,14 @@
 <template>
   <transition>
-    <div style="max-width: 400px" class="space-y-2 px-2 shimmer-text bg-gray-200">
+    <div
+      style="max-width: 400px"
+      class="space-y-2 px-2 shimmer-text bg-gray-200"
+    >
       <div
         v-for="(x, i) in range(1, 2)"
         :class="{ 'w-5/6': i == range(1, 2).length - 1 }"
         :key="i"
-        class="h-2  rounded shimmer-text"
+        class="h-2 rounded shimmer-text"
       ></div>
     </div>
   </transition>
@@ -40,9 +43,7 @@ export default {
   animation-iteration-count: infinite;
   animation-name: shimmer-text;
   animation-timing-function: linear;
-  background: linear-gradient(
-    to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%
-  );
+  background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
   background-size: 1000px 104px;
   background-position: -468px 0;
   background-repeat: no-repeat;

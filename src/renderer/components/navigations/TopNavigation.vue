@@ -69,7 +69,7 @@
         </div>
           <!-- <div class="top-nav-divider"></div> -->
 
-        <ul class="menu-container">
+        <ul class="menu-container text-sm">
           <li @click.prevent="toggleSideRight('activities-list')">
             <router-link to="#" class="text-sm">
               <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
@@ -107,7 +107,7 @@
         </div>
       </div>
 
-      <div v-if="is_browser" class="pr-2">
+      <div v-if="is_browser" class="pr-2 text-sm">
         Logout
       </div>
 
@@ -159,11 +159,17 @@ export default {
     return {
       is_browser: false,
       alert_close_app: false,
+      page_title: '',
+    }
+  },
+  watch:{
+    $route: function() {
+      this.page_title = document.title;
     }
   },
   computed: {
     pageTitle() {
-      return this.$store.state.title;
+      return this.page_title;
     },
     darkMode() {
       return this.$store.state.darkMode;

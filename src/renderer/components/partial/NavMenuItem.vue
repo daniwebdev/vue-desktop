@@ -1,7 +1,7 @@
 <template>
   <router-link to="#" :title="data.name">
     <i :class="data.icon"></i>
-    <span class="block">{{ data.name }}</span>
+    <!-- <span class="block">{{ data.name }}</span> -->
   </router-link>
 </template>
 
