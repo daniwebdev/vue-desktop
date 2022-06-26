@@ -16,3 +16,8 @@ app.use(appstore)
 app.use(router)
 
 app.mount('#app')
+
+
+if(window.Neutralino != undefined) {
+    window.Neutralino.init();
+}
