@@ -8,3 +8,12 @@ Neutralinojs is a lightweight and portable desktop application development frame
 
 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web.
 
+## How to run
+
+You must build first to run app with NeutralinoJS
+
+```bash
+$ vue build
+---
+$ neu run
+```
