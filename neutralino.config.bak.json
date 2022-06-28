@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "defaultMode": "window",
   "port": 0,
-  "documentRoot": "/resources/dist/",
-  "url": "/#/app",
+  "documentRoot": "/dist/",
+  "url": "/#/login",
   "enableServer": true,
   "enableNativeAPI": true,
   "tokenSecurity": "one-time",
@@ -31,19 +31,20 @@
   },
   "modes": {
     "window": {
-      "title": "desktop-init",
+      "title": "vue-desktop-app",
       "width": 800,
       "height": 500,
       "minWidth": 400,
       "minHeight": 200,
       "fullScreen": false,
       "alwaysOnTop": false,
-      "icon": "resources/public/img/icons/android-chrome-maskable-192x192.png",
+      "icon": "/src/assets/logo.png",
       "enableInspector": true,
       "borderless": true,
-      "maximize": true,
+      "maximize": false,
       "hidden": false,
-      "resizable": false,
+      "center": true,
+      "resizable": true,
       "exitProcessOnClose": true
     },
     "browser": {
@@ -71,14 +72,14 @@
     }
   },
   "cli": {
-    "binaryName": "desktop-init",
-    "resourcesPath": "/resources/dist/",
+    "binaryName": "vue-desktop-app",
+    "resourcesPath": "/dist/",
     "extensionsPath": "/extensions/",
-    "clientLibrary": "/resources/dist/neutralino.js",
+    "clientLibrary": "/public/neutralino.js",
     "binaryVersion": "4.6.0",
     "clientVersion": "3.5.0",
     "frontendLibrary": {
-      "patchFile": "/resources/dist/index.html",
+      "patchFile": "/public/index.html",
       "devUrl": "http://localhost:8081/#/app"
     }
   }
