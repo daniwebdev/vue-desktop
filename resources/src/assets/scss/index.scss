@@ -14,11 +14,13 @@
 
 /* Utils */
 @import "./tooltip";
+@import "./contextmenu";
 
 /* Body */
 
 body {
     font-family: 'Poppins', sans-serif;
+    user-select: none;
 }
 
 

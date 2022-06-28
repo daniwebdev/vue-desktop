@@ -1,9 +1,17 @@
 <template>
   <!-- Footer -->
   <div class="bottom-navigation">
-    <div>
-        <i class="fa fa-link" aria-hidden="true"></i> {{ current_path }}
+    <div class="bottom-navigation-left">
+        <span>
+          <i class="fa fa-link" aria-hidden="true"></i> {{ current_path }}
+        </span>
+        <span>
+          <i class="fa fa-laptop" aria-hidden="true"></i> 129.0.10.1
+        </span>
     </div>
+
+
+    
     <div class="flex flex-row side-right">
       <div class="clock">
         <i class="fas fa-clock" aria-hidden="true"></i>
@@ -45,9 +53,6 @@ export default {
         var hours = time.getHours().toString().padStart(2, '0');
         var minutes = time.getMinutes();
         var seconds = time.getSeconds().toString().padStart(2, '0');
-        // var ampm = hours >= 12 ? 'PM' : 'AM';
-        // hours = hours % 12;
-        // hours = hours ? hours : 12;
         minutes = minutes < 10 ? '0' + minutes : minutes;
         
         clock.innerHTML = hours + ':' + minutes + ':' + seconds;
@@ -57,5 +62,13 @@ export default {
 </script>
 
 <style lang="scss">
+  .bottom-navigation-left {
+    span {
+      margin-right: 20px;
 
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 </style>

@@ -29,43 +29,60 @@ export function searchToggleSuggestion() {
     });
 }
 
-export const initContextMenu = () => {
+/* 
+Initialize context menu (rightclick)
+*/
+export const initContextMenu = (targetElement='main .context', contextSelector='.context-menu', callbackOnClick=undefined) => {
+  /* helper */
   let hideContextMenu = (e) => {
+   
     if (e.target.classList.contains("context")) {
       return false;
     }
-    document.querySelector(".context-menu").style.left = "-9999px";
-    document.querySelector(".context-menu").style.top = "-9999px";
+
+    document.querySelector(contextSelector).style.left = "-9999px";
+    document.querySelector(contextSelector).style.top = "-9999px";
 
     return true;
   };
 
-  document.querySelectorAll("main .context").forEach((el) => {
+  document.querySelectorAll(targetElement).forEach((el) => {
+
+    /* add event (rightclick) every element */
     el.addEventListener("contextmenu", (e) => {
       e.preventDefault();
+      var data = null;
 
       if (!hideContextMenu(e)) {
         return;
       }
-      var data = null;
 
       try {
         data = JSON.parse(el.getAttribute("data"));
       } catch (e) {
         data = el.getAttribute("data");
       }
-      // let data = e.target.getAttribute('data');
-      console.log(data);
-      window.context_data = data;
-      // console.log("Coordinate(X) = " + e.clientX + "<br>Coordinate(Y) = " + e.clientY);
+      
+      console.log(data, 'common.js');
 
-      // console.log(innerHeight - e.clientY)
-      if(((innerWidth - e.clientX) < 165)) {
-        document.querySelector(".context-menu").style.left = e.clientX - 200 + "px";
-      } else {
-        document.querySelector(".context-menu").style.left = e.clientX - 60 + "px";
+      window.context_data = data;
+
+      if(callbackOnClick != undefined) {
+        callbackOnClick(data);
       }
-      document.querySelector(".context-menu").style.top = ((innerHeight - e.clientY) < 160 ? e.clientY - 160:e.clientY - 40) + "px";
+
+      // console.log(e.clientX, e.clientY)
+      var menuContainer = document.querySelector(contextSelector);
+
+      // console.log(menuContainer.clientHeight, menuContainer.clientWidth)
+
+      if(((innerWidth - e.clientX) < menuContainer.clientWidth)) {
+        // alert('dfasd');
+        document.querySelector(contextSelector).style.left = e.clientX - 200 + "px";
+      } else {
+        document.querySelector(contextSelector).style.left = e.clientX - 60 + "px";
+      }
+      document.querySelector(contextSelector).style.top = ((innerHeight - e.clientY) < (menuContainer.clientHeight + 40) ? e.clientY - (menuContainer.clientHeight + 40) : e.clientY - 40) + "px";
     });
   });
 
@@ -74,7 +91,7 @@ export const initContextMenu = () => {
 
 
 /*
-  functino for init file upload component
+  function for init file upload component
 */
 export const initFileUpload = (container=null) => {
   

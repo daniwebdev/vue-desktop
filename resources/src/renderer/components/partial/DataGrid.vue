@@ -1,4 +1,8 @@
 <template>
+  <div class="main-control" v-if="$slots.actions">
+    <slot name="actions"></slot>
+  </div>
+
   <div class="table-header">
     <div
       v-for="(col, i) in columnDefs"
@@ -13,9 +17,9 @@
     </div>
   </div>
 
-  <div class="table-body scrollbar">
+  <div class="table-body scrollbar" :class="{'without-action': !$slots.actions}">
     <div
-      class="table-row context"
+      class="table-row"
       :data="JSON.stringify(build_data(columnDefs, items))"
       v-for="(items, index) in datasets"
       :key="'d-grid_' + index"
@@ -38,6 +42,7 @@
 </template>
 
 <script>
+
 export default {
   props: {
     columnDefs: {
@@ -61,6 +66,8 @@ export default {
       return output;
     },
   },
+
+
 };
 </script>
 
@@ -114,6 +121,11 @@ $table-header-height: 40px;
   width: calc(100vw - $side-nav-width);
   overflow-y: scroll;
   height: calc($main-height - $table-header-height - $top-control-height);
+
+  &.without-action {
+  height: calc($main-height - $table-header-height) !important;
+  }
+
   .table-row {
     display: flex;
     cursor: pointer;

@@ -89,6 +89,7 @@
       </div>
 
       <div v-if="is_browser" class="pr-2 text-sm">Logout</div>
+      
     </div>
   </nav>
 
