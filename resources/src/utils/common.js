@@ -32,11 +32,15 @@ export function searchToggleSuggestion() {
 /* 
 Initialize context menu (rightclick)
 */
+export const destroyContextMenu = () => {
+
+}
 export const initContextMenu = (targetElement='main .context', contextSelector='.context-menu', callbackOnClick=undefined) => {
   /* helper */
   let hideContextMenu = (e) => {
+
    
-    if (e.target.classList.contains("context")) {
+    if (e.target.classList.contains("context") || document.querySelector(contextSelector) == null) {
       return false;
     }
 
@@ -45,6 +49,9 @@ export const initContextMenu = (targetElement='main .context', contextSelector='
 
     return true;
   };
+
+  document.documentElement.addEventListener("click", hideContextMenu);
+
 
   document.querySelectorAll(targetElement).forEach((el) => {
 
@@ -86,7 +93,6 @@ export const initContextMenu = (targetElement='main .context', contextSelector='
     });
   });
 
-  document.documentElement.addEventListener("click", hideContextMenu);
 };
 
 

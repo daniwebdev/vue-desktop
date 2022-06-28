@@ -3,7 +3,6 @@
     <data-grid
       :columnDefs="columnDefs"
       :datasets="datasets"
-      :withActionSpace="true"
     >
       <template v-slot:actions>
         <router-link :to="{ name: 'employee.form' }" class="btn btn-primary">
