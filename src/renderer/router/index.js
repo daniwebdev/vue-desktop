@@ -5,7 +5,8 @@ const routes = [
   {
     path: "/",
     name: "init",
-    component: () => import("../App.vue"),
+    redirect: '/app',
+    // component: () => import("../App.vue"),
   },
   {
     path: "/app",
