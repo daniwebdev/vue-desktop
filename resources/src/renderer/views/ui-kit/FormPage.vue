@@ -111,7 +111,7 @@
 
 <script>
 import InputText from '@/renderer/components/elements/form/InputText.vue'
-import { initFileUpload } from '@/renderer/utils/common.js'
+import { initFileUpload } from '@/utils/common.js'
 
 export default {
   components: {

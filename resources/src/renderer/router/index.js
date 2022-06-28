@@ -1,5 +1,8 @@
 // import { createRouter, createWebHashHistory } from 'vue-router'
 import { createRouter, createWebHashHistory } from "vue-router";
+if(window.__TAURI_IPC__ instanceof Function) {
+  var app = require('@tauri-apps/api/app')
+}
 
 const routes = [
   {
@@ -14,11 +17,10 @@ const routes = [
     component: () => import("../layouts/AppHome.vue"),
     children: [
       {
-        path: "help",
-        name: "help",
-        component: () => import("../views/HelpPage.vue"),
+        path: "",
+        name: "home.app",
+        component: () => import("../views/HomePage.vue"),
       },
-
       ...require("./employee").routes,
       ...require("./ui").routes,
     ],
@@ -32,7 +34,13 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
+  var appName = 'Untitled';
+
+  if(window.__TAURI_IPC__ != undefined) {
+    appName = await app.getName();
+  }
+
   // This goes through the matched routes from last to first, finding the closest route with a title.
   // e.g., if we have `/some/deep/nested/route` and `/some`, `/deep`, and `/nested` have titles,
   // `/nested`'s will be chosen.
@@ -53,10 +61,9 @@ router.beforeEach((to, from, next) => {
   //   .find((r) => r.meta && r.meta.metaTags);
 
   // If a route with a title was found, set the document (page) title to that value.
+  document.title = appName
   if (nearestWithTitle) {
     document.title = nearestWithTitle.meta.title;
-  } else {
-    document.title = "Untitled"
   }
    //else if (previousNearestWithMeta) {
     //document.title = previousNearestWithMeta.meta.title;

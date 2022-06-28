@@ -72,7 +72,7 @@
 import TopNavigation from '@/renderer/components/navigations/TopNavigation.vue'
 import SideNavigation from '@/renderer/components/navigations/SideNavigation.vue'
 import BottomNavigation from '@/renderer/components/navigations/BottomNavigation.vue'
-import {initContextMenu} from '@/renderer/utils/common.js';
+import {initContextMenu} from '@/utils/common.js';
 
 export default {
   name: 'AppHome',

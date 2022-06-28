@@ -20,9 +20,10 @@
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow-y: auto;
+    // overflow-y: auto;
     li {
         @apply button-main-navigation;
+
         &.menu-item {
             font-size: 11px;
             text-transform: capitalize;
@@ -32,6 +33,7 @@
             a {
                 padding: 10px 0px;
             }
+
         }
         &.active {
             @apply bg-gray-200;
@@ -44,11 +46,20 @@
                 // left: $side-nav-width;
             }
         }
-        a {
+        a.main-menu-item {
             @apply border-b border-gray-200 ;
             @apply dark:border-gray-800;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            height: $side-nav-width;
+
+            i {
+                /* Font Size for Icon */
+                font-size: 20px !important;
+            }
+
         }
         ul.submenu {
             @apply bg-gray-200;
@@ -78,7 +89,8 @@
                 padding: 7.5px 5px;
             }
             li a {
-                color: #696969;
+                @apply text-gray-600;
+                @apply dark:text-gray-300 dark:hover:text-gray-600;
                 padding: 8px 8px;
                 font-size: $font-size-small;
                 display: block;

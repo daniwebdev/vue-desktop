@@ -19,7 +19,7 @@
       </button>
     </div>
 
-    <data-grid :columnDefs="columnDefs" :datasets="datasets"></data-grid>
+    <data-grid :columnDefs="columnDefs" :datasets="datasets" :withActionSpace="true"></data-grid>
   </div>
 </template>
 
