@@ -18,5 +18,14 @@ app.use(router);
 app.mount("#app");
 
 if (window.Neutralino != undefined) {
-  window.Neutralino.init();
+  // eslint-disable-next-line no-inner-declarations
+
+  // window.Neutralino.init();
+  // window.Neutralino.events.on("ready", async () => {
+  //   window.Neutralino.os.showMessageBox("Welcome", "Hello Neutralinojs");
+  //   await window.Neutralino.window.setDraggableRegion(
+  //     document.querySelector(".drag")
+  //   )
+  // });
+
 }
