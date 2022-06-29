@@ -12,10 +12,18 @@
 
 ## How to run
 
-You must build first to run app with NeutralinoJS
+### Run Development Mode
 
 ```bash
-$ vue build
----
-$ neu run
+$ vue serve
+--
+$ npm run tauri dev
 ```
+
+### Build
+
+```bash
+$ npm run tauri build
+```
+
+for more information about Tauri, please visit [(tauri-apps/tauri)](https://github.com/tauri-apps/tauri).
