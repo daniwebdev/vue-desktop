@@ -1,8 +1,8 @@
-# Vue Desktop With NeutralinoJS
+# Vue Desktop With Tauri
 
-## NeutralinoJS
+## Tauri
 
-<a href="https://github.com/neutralinojs" target="_blank">Neutralinojs</a> is a lightweight and portable desktop application development framework. It lets you develop lightweight cross-platform desktop applications using JavaScript, HTML and CSS. Apps built with Neutralinojs can run on Linux, macOS, Windows, Web, and Chrome. Also, you can extend Neutralinojs with any programming language (via extensions IPC) and use Neutralinojs as a part of any source file (via child processes IPC).
+<a href="https://github.com/tauri-apps/tauri" >Tauri</a> is a framework for building tiny, blazingly fast binaries for all major desktop platforms. Developers can integrate any front-end framework that compiles to HTML, JS and CSS for building their user interface. The backend of the application is a rust-sourced binary with an API that the front-end can interact with.
 
 ## VueJS v3
 

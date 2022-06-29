@@ -2,10 +2,12 @@
     @apply bg-white rounded;
     @apply dark:bg-gray-900 dark:text-gray-400;
     width: 150px;
+    box-shadow: 0px 0px 10px #1c1c1c4d;
     z-index: 1000;
     position: absolute;
     left: -9999px;
     top: -9999px;
+    
     ul {
         li {
             @apply border-b text-xs p-2 hover:bg-gray-300 dark:border-gray-800;
