@@ -27,11 +27,13 @@
           </div>
           <div class="form-group col-span-1">
             <label for="">Gender</label>
-            <div class="form-radio">
-              <input type="radio" name="gender" id="famela"> <label for="famela">Famela</label>
-            </div>
-            <div class="form-radio">
-              <input type="radio" name="gender" id="male"> <label for="male">Male</label>
+            <div class="py-3">
+              <div class="form-radio">
+                <input type="radio" name="gender" id="famela"> <label for="famela">Famela</label>
+              </div>
+              <div class="form-radio">
+                <input type="radio" name="gender" id="male"> <label for="male">Male</label>
+              </div>
             </div>
           </div>
           <div class="form-group col-span-1">
@@ -82,16 +84,11 @@
 
           <div class="col-span-2">
             <div class="grid gap-4 grid-cols-3" id="file_upload">
-              <div class="form-group form-file">
-                <i class="fas fa-upload mb-3"></i>
-                <label class="">Identity Card</label>
-                <input type="file" name="" id="" hidden />
-              </div>
-              <div class="form-group form-file">
-                <i class="fas fa-upload mb-3"></i>
-                <label class="">Other Document</label>
-                <input type="file" name="" id="" hidden />
-              </div>
+              
+              <custom-upload-file label="Identity Card"></custom-upload-file>
+              <custom-upload-file label="Identity Card"></custom-upload-file>
+              <custom-upload-file label="Identity Card"></custom-upload-file>
+              
             </div>
           </div>
 
@@ -112,16 +109,18 @@
 <script>
 import InputText from '@/renderer/components/elements/form/InputText.vue'
 import { initFileUpload } from '@/utils/common.js'
+import CustomUploadFile from '@/renderer/components/partial/form/CustomUploadFile.vue'
 
 export default {
   components: {
-    InputText
+    InputText,
+    CustomUploadFile
   },
   mounted() {
 
     initFileUpload(document.querySelector('#file_upload'));
 
-},
+  },
 };
 </script>
 
@@ -166,17 +165,7 @@ export default {
       }
     }
 
-    &.form-file {
-      @apply flex flex-col justify-center items-center text-3xl h-40 dark:bg-gray-900 rounded-md;
-      @apply hover:bg-gray-200 dark:hover:bg-gray-800;
-      @apply border border-gray-300 dark:border-gray-900;
-
-      cursor: pointer;
-
-      * {
-        cursor: pointer;
-      }
-    }
+   
   }
 }
 </style>

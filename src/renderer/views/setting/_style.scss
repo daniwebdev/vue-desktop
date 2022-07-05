@@ -1,0 +1,32 @@
+@import "../../../assets/scss/variables";
+#setting-container {
+    display: flex;
+    height: $main-height;
+    .setting-main {
+        flex: 1;
+        padding: 1em;
+        overflow-y: auto;
+        height: $main-height;
+    }
+    .setting-sidebar {
+        padding: 1em;
+        width: 250px;
+        background: #1a1b28;
+        height: $main-height;
+
+        ul {
+            li {
+                a {
+                    display: block;
+                    padding: 15px;
+                    border-radius: 20px;
+                    font-size: 16px;
+
+                }
+                .router-link-exact-active {
+                    background: #1d1e2f;
+                }
+            }
+        }
+    }
+}

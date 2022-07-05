@@ -42,7 +42,7 @@
     display: inline-flex;
 
     .window-nav-item {
-      height: $top-nav-height;
+      height: $top-nav-height - 10px;
       display: flex;
       align-items: center;
       justify-content: center;

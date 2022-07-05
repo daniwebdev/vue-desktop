@@ -101,15 +101,15 @@ export const initContextMenu = (targetElement='main .context', contextSelector='
 */
 export const initFileUpload = (container=null) => {
   
-  container.querySelectorAll(".form-file").forEach(el => {
+  container.querySelectorAll(".upload-custom").forEach(el => {
     el.addEventListener("click", () => {
       // this.querySelector('input[type="file"]').click();
       // let _target = e.target;
       let _target = el;
       console.log(_target.classList);
-      _target.querySelector('input[type="file"]').click();
+      _target.querySelector('input[data-upload]').click();
 
-      _target.querySelector('input[type="file"]').addEventListener("change", function (eF) {
+      _target.querySelector('input[data-upload]').addEventListener("change", function (eF) {
           // console.log(eF.target.files);
           let file_url = URL.createObjectURL(eF.target.files[0]);
 

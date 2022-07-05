@@ -21,6 +21,14 @@ const routes = [
         name: "home.app",
         component: () => import("../views/HomePage.vue"),
       },
+      {
+        path:"setting",
+        name:"app.setting",
+        component: () => import("../views/setting/MainPage.vue"),
+        children: [
+          ...require('./setting').router,
+        ]
+      },
       ...require("./employee").routes,
       ...require("./ui").routes,
     ],
