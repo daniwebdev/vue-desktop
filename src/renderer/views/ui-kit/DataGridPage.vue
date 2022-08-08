@@ -14,8 +14,8 @@
         <span>Update Data</span>
       </li>
       <li @click.prevent="gotoDetail()">
-        <i class="fas fa-pencil"></i>
-        <span>Transfer / Mutasi</span>
+        <i class="fas fa-archive"></i>
+        <span>Archive</span>
       </li>
     </ul>
   </div>

@@ -1,13 +1,16 @@
 <template>
   <!-- Footer -->
   <div class="bottom-navigation">
-    <div class="bottom-navigation-left">
-        <span>
-          <i class="fa fa-link" aria-hidden="true"></i> {{ current_path }}
-        </span>
-        <span>
+    <div class="bottom-navigation-left inline-block">
+        <div style="width: 170px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" class="d-flex items-center align-middle mr-5">
+          <i class="fa fa-link" aria-hidden="true"></i> {{ current_path }} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, autem.
+        </div>
+        <div>
           <i class="fa fa-laptop" aria-hidden="true"></i> 129.0.10.1
-        </span>
+        </div>
+        <div>
+          <i class="fa fa-building" aria-hidden="true"></i> Prioritas Group
+        </div>
     </div>
 
 
@@ -63,7 +66,8 @@ export default {
 
 <style lang="scss">
   .bottom-navigation-left {
-    span {
+    div {
+      @apply inline-block;
       margin-right: 20px;
 
       &:last-child {

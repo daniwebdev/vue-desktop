@@ -157,10 +157,11 @@ export default {
       document.querySelector(".alert").classList.toggle("hidden");
     },
 
+    /* support tauriAPI */
     dragableArea() {
       document.querySelectorAll(".dragable").forEach((el) => {
-        el.addEventListener("mousedown", async (e) => {
-          console.log(e.target.classList);
+        el.addEventListener("mousedown", async () => {
+
           await this.$tauriAPI.window.appWindow.startDragging();
         });
       });

@@ -1,0 +1,25 @@
+
+.file-upload-area {
+    @apply flex flex-col justify-center items-center text-3xl h-40 dark:bg-gray-900 rounded-md;
+    @apply hover:bg-gray-200 dark:hover:bg-gray-800;
+    @apply border border-gray-300 dark:border-gray-900;
+
+    cursor: pointer;
+
+    .upload-icon {
+        @apply dark:bg-gray-900 shadow-md;
+        width: 60px;
+        height: 60px;
+
+        font-size: 25px;
+
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    * {
+        cursor: pointer;
+    }
+}

@@ -51,18 +51,17 @@ export default {
 
   data() {
     return {
-      // current_path: '/',
+
     }
   },
 
   mounted() {
-      // initContextMenu();
 
     this.$store.commit('toggleDarkMode', localStorage.getItem("darkMode") == "true");
   },
 
   updated() {
-      // initContextMenu();
+
   },
   
 
