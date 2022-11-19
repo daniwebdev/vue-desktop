@@ -1,7 +1,12 @@
 {
   "name": "vue-desktop-app",
   "version": "0.1.1-dev",
-  "private": true,
+  "description": "Desktop app with vue js, run on tauri (rust)",
+  "author": {
+    "email": "me@dani.work",
+    "name": "@daniwebdev",
+    "url": "https://github.com/daniwebdev"
+  },
   "scripts": {
     "serve": "vue-cli-service serve --port 9009",
     "build": "vue-cli-service build",
